@@ -31,7 +31,7 @@ public class Part_A_CGF {
     }
     // wkSting is work string (build from production rules)
     public boolean processData(String inString, String wkString){
-        System.out.println("wkString: " + wkString);
+        //System.out.println("wkString: " + wkString);
         //If inString and wkString are equa then return true
         if(inString.equals(wkString))
             return true;
@@ -52,18 +52,24 @@ public class Part_A_CGF {
                     if(Code[i].charAt(0) == wkString.charAt(dex)){
                         //make substitution for nonterminal creating a new working string
                         String[] work = wkString.split(NonTerm);
-                        if(work.length == 0){
-                            //Recursive call to processData with new working string
-                            if(processData(inString, Code[i].substring(3)))
-                                return true;
-                        }else if(work.length == 1){
-                            //Recursive call to processData with new working string
-                            if(processData(inString, work[0] + Code[i].substring(3)))
-                                return true;
-                        }else if(work.length == 2){
-                            //Recursive call to processData with new working string
-                            if(processData(inString, work[0] + Code[i].substring(3) + work[1]))
-                                return true;
+                        switch (work.length) {
+                            case 0:
+                                //Recursive call to processData with new working string
+                                if(processData(inString, Code[i].substring(3)))
+                                    return true;
+                                break;
+                            case 1:
+                                //Recursive call to processData with new working string
+                                if(processData(inString, work[0] + Code[i].substring(3)))
+                                    return true;
+                                break;
+                            case 2:
+                                //Recursive call to processData with new working string
+                                if(processData(inString, work[0] + Code[i].substring(3) + work[1]))
+                                    return true;
+                                break;
+                            default:
+                                break;
                         }
                     }// check non-terminals 
                    
