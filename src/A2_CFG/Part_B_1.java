@@ -20,10 +20,8 @@ public class Part_B_1 {
         // same number of b's. 
         // Test your program with the following input strings:
 	//		ab, aabb, aaabbb, aaabbbbb, aaaabbb
-        String[] C = {"S=>aSb",
-                      "S=>aaTbb",
-                      "T=>aaUbb",
-                      "U=>"};
+        String[] C = {"S=>aaSbb",
+                      "S=>ab"};
 
         String inString, startWkString;
         boolean accept1;
