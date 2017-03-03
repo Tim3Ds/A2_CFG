@@ -51,30 +51,29 @@ public class Part_A_CGF {
                     //If rule applies, 
                     if(Code[i].charAt(0) == wkString.charAt(dex)){
                         //make substitution for nonterminal creating a new working string
-                        if(wkString.length() == 1){
-                            wkString = Code[i].substring(3);
+                        String[] work = wkString.split(NonTerm);
+                        if(work.length == 0){
                             //Recursive call to processData with new working string
-                            if(processData(inString, wkString))
+                            if(processData(inString, Code[i].substring(3)))
                                 return true;
-                        }else{
-                            String[] work = wkString.split(NonTerm);
-                            if(work.length == 1){
-                                //Recursive call to processData with new working string
-                                if(processData(inString, work[0] + Code[i].substring(3)))
-                                    return true;
-                            }else if(work.length == 2){
-                                //Recursive call to processData with new working string
-                                if(processData(inString, work[0] + Code[i].substring(3) + work[1]))
-                                    return true;
-                            }
+                        }else if(work.length == 1){
+                            //Recursive call to processData with new working string
+                            if(processData(inString, work[0] + Code[i].substring(3)))
+                                return true;
+                        }else if(work.length == 2){
+                            //Recursive call to processData with new working string
+                            if(processData(inString, work[0] + Code[i].substring(3) + work[1]))
+                                return true;
                         }
-                    }
-                }
-            }
+                    }// check non-terminals 
+                   
+                }// end for non-terminal 
+                
+            }// end if termianl 
 //            // If no nonterminals exist in wkString then return false
 //            if(NonTerm == "")
 //                return false;
-        }
+        }// end parse of string 
         return false;
     }//End For end processData
         
