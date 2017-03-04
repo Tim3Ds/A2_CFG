@@ -31,12 +31,12 @@ public class Part_A_CGF {
     }
     // wkSting is work string (build from production rules)
     public boolean processData(String inString, String wkString){
-        //System.out.println("insring: "+ inString + " wkString: " + wkString);
+        System.out.println("insring: "+ inString + " wkString: " + wkString);
         //If inString and wkString are equa then return true
         if(inString.equals(wkString))
             return true;
         //If wkString is larger than inString then return false
-        if(inString.length() < wkString.length())
+        if(inString.length() < wkString.length()-2)
             return false;
         //Search for a nonterminal (Upper Case character) in wkString
         int dex;
