@@ -24,7 +24,7 @@ public class Part_B_2 {
                       "S=>abS",
                       "S=>a",
                       "S=>b",
-                      "S=>ab"};
+                      "S=>"};
 
         String inString, startWkString;
         boolean accept1;
