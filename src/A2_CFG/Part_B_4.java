@@ -16,7 +16,9 @@ public class Part_B_4 {
         // by twice as many y's, and ending with z. 
         // Test your program with the following input strings:
 	//		zz, zxxyyz, zxxyyyy, zxyyz, zxxyyyyz
-        String[] C = {""};
+        String[] C = {"S=>zTz",
+                      "T=>xTyy",
+                      "T=>"};
 
         String inString, startWkString;
         boolean accept1;
