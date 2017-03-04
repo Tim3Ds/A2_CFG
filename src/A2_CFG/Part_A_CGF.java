@@ -31,7 +31,7 @@ public class Part_A_CGF {
     }
     // wkSting is work string (build from production rules)
     public boolean processData(String inString, String wkString){
-        System.out.println("insring: "+ inString + " wkString: " + wkString);
+        //System.out.println("insring: "+ inString + " wkString: " + wkString);
         //If inString and wkString are equa then return true
         if(inString.equals(wkString))
             return true;
