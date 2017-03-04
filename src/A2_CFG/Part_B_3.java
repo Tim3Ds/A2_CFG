@@ -16,7 +16,9 @@ public class Part_B_3 {
         // (N >= 0, N is an integer) before the b, and 2N+1 a's after the b. 
         // Test your program with the following input strings:
 	//		ba, aaabaaaa, aabaaa, abaa, aaaabaaa
-        String[] C = {""};
+        String[] C = {"S=>Ta",
+                      "T=>aTa",
+                      "T=>b"};
 
         String inString, startWkString;
         boolean accept1;
