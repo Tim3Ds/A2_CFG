@@ -20,11 +20,11 @@ public class Part_B_2 {
         // aa.  
         // Test your program with the following input strings:
 	//		abba, abbabaaa, abaabab, bababbab, bbbabba
-        String[] C = {"S=>aT",
-                      "S=>bS",
-                      "T=>bT",
-                      "T=>a",
-                      "T=>b"};
+        String[] C = {"S=>bS",
+                      "S=>abS",
+                      "S=>a",
+                      "S=>b",
+                      "S=>ab"};
 
         String inString, startWkString;
         boolean accept1;
