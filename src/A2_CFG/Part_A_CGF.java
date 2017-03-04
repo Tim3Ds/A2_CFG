@@ -31,12 +31,12 @@ public class Part_A_CGF {
     }
     // wkSting is work string (build from production rules)
     public boolean processData(String inString, String wkString){
-        //System.out.println("wkString: " + wkString);
+        //System.out.println("insring: "+ inString + " wkString: " + wkString);
         //If inString and wkString are equa then return true
         if(inString.equals(wkString))
             return true;
         //If wkString is larger than inString then return false
-        if(inString.length() <= wkString.length())
+        if(inString.length() < wkString.length())
             return false;
         //Search for a nonterminal (Upper Case character) in wkString
         int dex;
@@ -52,20 +52,21 @@ public class Part_A_CGF {
                     if(Code[i].charAt(0) == wkString.charAt(dex)){
                         //make substitution for nonterminal creating a new working string
                         String[] work = wkString.split(NonTerm);
+                        String sub = Code[i].substring(3);
                         switch (work.length) {
                             case 0:
                                 //Recursive call to processData with new working string
-                                if(processData(inString, Code[i].substring(3)))
+                                if(processData(inString, sub))
                                     return true;
                                 break;
                             case 1:
                                 //Recursive call to processData with new working string
-                                if(processData(inString, work[0] + Code[i].substring(3)))
+                                if(processData(inString, work[0] +sub))
                                     return true;
                                 break;
                             case 2:
                                 //Recursive call to processData with new working string
-                                if(processData(inString, work[0] + Code[i].substring(3) + work[1]))
+                                if(processData(inString, work[0] + sub + work[1]))
                                     return true;
                                 break;
                             default:
